@@ -1,8 +1,10 @@
 import 'package:bettymobile/src/components/RegForm.dart';
+import 'package:bettymobile/src/components/initTransfer.dart';
 import 'package:bettymobile/src/components/locator.dart';
 import 'package:bettymobile/src/components/myColors.dart';
 import 'package:bettymobile/src/components/navService.dart';
 import 'package:bettymobile/src/components/updateRecipient.dart';
+import 'package:bettymobile/src/components/viewTransfer.dart';
 import 'package:bettymobile/src/pages/login.dart';
 import 'package:bettymobile/src/pages/master.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,10 @@ void main() {
         'master': (BuildContext context) => Master(),
         'registerRecipient': (BuildContext context) => RegForm(),
         'updateRecipient': (BuildContext context) =>
-            UpdateRecipient(ModalRoute.of(context).settings.arguments)
+            UpdateRecipient(ModalRoute.of(context).settings.arguments),
+      'initiateTransfer': (BuildContext context) => InitTransfer(),
+        'viewTransfer': (BuildContext context) =>
+            ViewTransfer(ModalRoute.of(context).settings.arguments)
       },
       navigatorKey: locator<NavigationService>().navigatorKey,
     ),

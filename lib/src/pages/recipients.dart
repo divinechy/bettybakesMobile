@@ -1,7 +1,5 @@
 import 'package:bettymobile/src/api/restAPI.dart';
-import 'package:bettymobile/src/components/RegForm.dart';
 import 'package:bettymobile/src/components/locator.dart';
-import 'package:bettymobile/src/components/updateRecipient.dart';
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:bettymobile/src/models/recipientModel.dart';
@@ -32,7 +30,12 @@ class _RecipientsState extends State<Recipients> {
       body: StreamBuilder<List<RecipientModel>>(
         stream: RestAPI.getListRecipients().asStream(),
         builder: (context, snapshot) {
+             
           if (snapshot.hasData) {
+              if (snapshot.data.length == 0) {
+              perPage = 0;
+              return Text("No transfer recipient has been created");
+            }
             //we plug in the data in datasource
             _tabledatasource = MyDataSource(recipients: snapshot.data);
             if (snapshot.data.length >= 7) {
@@ -110,7 +113,7 @@ class MyDataSource extends DataTableSource {
             Container(
               width: 120,
               child: Text(
-                '${recipientmodel.name}',
+                '${recipientmodel.name}', 
                 style: TextStyle(fontSize: 15.0),
               ),
             ), 
