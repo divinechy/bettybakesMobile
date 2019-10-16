@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "660128084869",
+    "firebase_url": "https://bettymobileapi.firebaseio.com",
+    "project_id": "bettymobileapi",
+    "storage_bucket": "bettymobileapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660128084869:android:68212346944e5367718aec",
+        "android_client_info": {
+          "package_name": "com.example.bettymobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660128084869-uhbdgvtjairqgkquvac8ch6p8lea7dcb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9oprVgSaceeH7_ud8a-6ypDjeV-6O0Fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660128084869-uhbdgvtjairqgkquvac8ch6p8lea7dcb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
