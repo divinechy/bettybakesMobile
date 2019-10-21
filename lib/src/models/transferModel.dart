@@ -15,6 +15,7 @@ class TransferModel {
   final String reason;
   final int id;
   final String transfercode;
+  final String otp;
   //unmapped
   final String recipientcode;
   final String currency;
@@ -30,6 +31,7 @@ class TransferModel {
       this.reason,
       this.id,
       this.transfercode,
+      this.otp,
       this.recipientcode,
       this.currency,
       //reference is not mapped

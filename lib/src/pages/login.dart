@@ -110,6 +110,7 @@ class _LoginState extends State<Login> {
                                 textInputAction: TextInputAction.done,
                                 cursorColor: Colors.deepPurpleAccent,
                                 obscureText: true,
+                                autofocus: false,
                                 decoration: InputDecoration(
                                   hintText: "Password ",
                                   icon: Icon(Icons.lock),

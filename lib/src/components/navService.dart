@@ -6,8 +6,12 @@ class NavigationService {
       new GlobalKey<NavigatorState>();
 
 //passing arguments 
-  Future<dynamic> navigateTo(String routeName, RecipientModel model) {
+  Future<dynamic> navigateToRecipient(String routeName, RecipientModel model) {
     return navigatorKey.currentState.pushNamed(routeName, arguments: model);
+  }
+
+  Future<dynamic> navigateToTransfer(String routeName, int id) {
+    return navigatorKey.currentState.pushNamed(routeName, arguments: id);
   }
 
   bool goBack() {

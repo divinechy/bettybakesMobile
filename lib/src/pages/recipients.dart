@@ -119,7 +119,7 @@ class MyDataSource extends DataTableSource {
             ), 
             onTap: () {
         //  print(recipientmodel.recipientCode);
-           _navigationService.navigateTo('updateRecipient', recipientmodel);
+           _navigationService.navigateToRecipient('updateRecipient', recipientmodel);
         }
         ),
         DataCell(

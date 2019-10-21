@@ -197,7 +197,7 @@ class RestAPI {
           });
       var res = ResponseData.fromJson(json.decode(response.body));
       if (res.status == true) {
-        var msg = "recipient created successfully";
+        var msg = "Transfer initiated successfully";
         return msg;
       } else
         throw res.message;
@@ -209,4 +209,57 @@ class RestAPI {
         throw e.message;
     }
   }
+
+ static Future<TransferModel> getTransferById(int id) async {
+    try {
+      var token = await getToken();
+      var url = " https://api.paystack.co/transfer/$id";
+      var response = await http.get(url, headers: {
+        "content-type": "application/json",
+        "accept": "application/json",
+        HttpHeaders.authorizationHeader: "bearer $token"
+      });
+      var res = ResponseData.fromJson(json.decode(response.body));
+      if (res.status == true) {
+        var result = TransferModel.fromJson(res.data);
+        return result;
+      } else
+        throw res.message;
+    } catch (e) {
+      if (e.runtimeType == String) {
+        throw e;
+      } else
+        throw e.message;
+    }
+  }
+
+   static Future<String> finalizeTransfer(TransferModel _transfer) async {
+    try {
+      var token = await getToken();
+      var url = "https://api.paystack.co/transfer/finalize_transfer";
+      var response = await http.post(url,
+          body: json.encode({
+            "transfer_code": _transfer.transfercode,
+            "otp": _transfer.otp,
+          }),
+          headers: {
+            "content-type": "application/json",
+            "accept": "application/json",
+            HttpHeaders.authorizationHeader: "bearer $token"
+          });
+      var res = ResponseData.fromJson(json.decode(response.body));
+      if (res.status == true) {
+        var msg = "Transfer completed successfully";
+        return msg;
+      } else
+        throw res.message;
+    } catch (e) {
+      //only interested in the exception message
+      if (e.runtimeType == String) {
+        throw e;
+      } else
+        throw e.message;
+    }
+  }
+
 }

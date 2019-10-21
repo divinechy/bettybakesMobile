@@ -109,7 +109,7 @@ class MyDataSource extends DataTableSource {
             ), 
             onTap: () {
         //  view transfer by id
-          // _navigationService.navigateTo('updateRecipient', recipientmodel);
+         _navigationService.navigateToTransfer('viewTransfer', transmodel.id);
         }
         ),
         DataCell(
