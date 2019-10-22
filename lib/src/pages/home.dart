@@ -52,8 +52,11 @@ class _HomeState extends State<Home> {
                         children: <Widget>[
                           ClipRRect(
                             borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(12),
                                 topLeft: Radius.circular(12),
                                 topRight: Radius.circular(12)),
+                                
                             child: Image.asset(
                               'images/blackwomen.jpg',
                               fit: BoxFit.cover,
@@ -95,6 +98,8 @@ class _HomeState extends State<Home> {
                         children: <Widget>[
                           ClipRRect(
                             borderRadius: BorderRadius.only(
+                                 bottomLeft: Radius.circular(12),
+                              bottomRight: Radius.circular(12),
                                 topLeft: Radius.circular(12),
                                 topRight: Radius.circular(12)),
                             child: Image.asset(
