@@ -6,8 +6,6 @@ import 'package:bettymobile/src/models/recipientModel.dart';
 import 'package:flutter/rendering.dart';
 import 'package:bettymobile/src/components/navService.dart';
 
-
-
 class Recipients extends StatefulWidget {
   @override
   _RecipientsState createState() => _RecipientsState();
@@ -30,9 +28,8 @@ class _RecipientsState extends State<Recipients> {
       body: StreamBuilder<List<RecipientModel>>(
         stream: RestAPI.getListRecipients().asStream(),
         builder: (context, snapshot) {
-             
           if (snapshot.hasData) {
-              if (snapshot.data.length == 0) {
+            if (snapshot.data.length == 0) {
               perPage = 0;
               return Text("No transfer recipient has been created");
             }
@@ -113,15 +110,14 @@ class MyDataSource extends DataTableSource {
             Container(
               width: 120,
               child: Text(
-                '${recipientmodel.name}', 
+                '${recipientmodel.name}',
                 style: TextStyle(fontSize: 15.0),
               ),
-            ), 
-            onTap: () {
-        //  print(recipientmodel.recipientCode);
-           _navigationService.navigateToRecipient('updateRecipient', recipientmodel);
-        }
-        ),
+            ), onTap: () {
+          //  print(recipientmodel.recipientCode);
+          _navigationService.navigateToRecipient(
+              'updateRecipient', recipientmodel);
+        }),
         DataCell(
           Container(
             width: 120,
@@ -152,4 +148,3 @@ class MyDataSource extends DataTableSource {
   @override
   int get selectedRowCount => 0;
 }
-
