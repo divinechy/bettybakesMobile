@@ -213,7 +213,7 @@ class RestAPI {
  static Future<TransferModel> getTransferById(int id) async {
     try {
       var token = await getToken();
-      var url = " https://api.paystack.co/transfer/$id";
+      var url = "https://api.paystack.co/transfer/$id";
       var response = await http.get(url, headers: {
         "content-type": "application/json",
         "accept": "application/json",
@@ -262,4 +262,26 @@ class RestAPI {
     }
   }
 
+  static Future<List<BalanceDatum>> checkBalance() async {
+    try {
+      var token = await getToken();
+      var url = "https://api.paystack.co/balance";
+      var response = await http.get(url, headers: {
+        "content-type": "application/json",
+        "accept": "application/json",
+        HttpHeaders.authorizationHeader: "bearer $token"
+      });
+      var res = ResponseData.fromJson(json.decode(response.body));
+      if (res.status == true) {
+        var result = BalanceDataList.fromJson(res.data);
+        return result.balanceData;
+      } else
+        throw res.message;
+    } catch (e) {
+      if (e.runtimeType == String) {
+        throw e;
+      } else
+        throw e.message;
+    }
+  }
 }

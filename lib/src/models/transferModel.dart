@@ -24,6 +24,7 @@ class TransferModel {
   final String dateUpdated;
   final String status;
   final dynamic recipient;
+  final String balance;
 
   TransferModel(
       {this.amount,
@@ -39,7 +40,8 @@ class TransferModel {
       this.failures,
       this.dateUpdated,
       this.status,
-      this.recipient});
+      this.recipient,
+      this.balance});
 
   factory TransferModel.fromJson(Map<String, dynamic> jsonData) {
     Recipient _recipient = Recipient.fromJson(jsonData['recipient']);
@@ -54,7 +56,8 @@ class TransferModel {
       failures: jsonData['failures'],
       dateUpdated: jsonData['updatedAt'],
       status: jsonData['status'],
-      recipient: _recipient
+      recipient: _recipient,
+      balance: jsonData['balance']
     );
   }
 }

@@ -296,22 +296,7 @@ class _InitTransferState extends State<InitTransfer> {
                                                 ),
                                               );
                                             });
-                                        try {
-                                          validateAndSave();
-                                        } catch (e) {
-                                          Navigator.pop(context);
-                                          Flushbar(
-                                            title: 'Something went wrong!',
-                                            message: e.message,
-                                            icon: Icon(
-                                              Icons.info_outline,
-                                              size: 28,
-                                              color: Colors.white,
-                                            ),
-                                            leftBarIndicatorColor: Colors.white,
-                                            duration: Duration(seconds: 5),
-                                          )..show(context);
-                                        }
+                                       validateAndSave();
                                       },
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
