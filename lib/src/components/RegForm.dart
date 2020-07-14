@@ -126,6 +126,7 @@ class _RegFormState extends State<RegForm> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                              style: TextStyle(color: Colors.black ),
                               decoration: InputDecoration(labelText: 'Name'),
                               autofocus: false,
                               validator: (value) =>
@@ -138,6 +139,7 @@ class _RegFormState extends State<RegForm> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               decoration:
                                   InputDecoration(labelText: 'Account Number'),
                               keyboardType: TextInputType.number,
@@ -153,6 +155,7 @@ class _RegFormState extends State<RegForm> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               decoration:
                                   InputDecoration(labelText: 'Description'),
                                   autofocus: false,
@@ -168,6 +171,7 @@ class _RegFormState extends State<RegForm> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: DropdownButtonFormField<String>(
+                               style: TextStyle(color: Colors.black ),
                               onSaved: (value) => _bankCode = _code,
                               decoration:
                                   InputDecoration.collapsed(hintText: ''),
@@ -208,7 +212,7 @@ class _RegFormState extends State<RegForm> {
                                   _code = models[_selectedIndex].code;
                                 });
                               },
-                              isExpanded: false,
+                              isExpanded: true,
                               hint: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Text('Select the bank'),
@@ -224,6 +228,7 @@ class _RegFormState extends State<RegForm> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               controller: _currency,
                               readOnly: true,
                               decoration:

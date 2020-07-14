@@ -118,6 +118,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               controller: _source,
                               readOnly: true,
                               decoration: InputDecoration(labelText: 'Source'),
@@ -127,6 +128,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               decoration: InputDecoration(labelText: 'Amount'),
                               keyboardType: TextInputType.number,
                               autofocus: false,
@@ -140,6 +142,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               decoration:
                                   InputDecoration(labelText: 'Reason'),
                               autofocus: false,
@@ -154,6 +157,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               decoration:
                                   InputDecoration(labelText: 'Reference'),
                                   autofocus: false,
@@ -169,6 +173,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: DropdownButtonFormField<String>(
+                               style: TextStyle(color: Colors.black ),
                               onSaved: (value) => _recipientCode = _code,
                               decoration:
                                   InputDecoration.collapsed(hintText: ''),
@@ -224,6 +229,7 @@ class _InitTransferState extends State<InitTransfer> {
                           Padding(
                             padding: const EdgeInsets.all(3.0),
                             child: TextFormField(
+                               style: TextStyle(color: Colors.black ),
                               controller: _currency,
                               readOnly: true,
                               decoration:

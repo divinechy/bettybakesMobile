@@ -15,6 +15,7 @@ class _ControlState extends State<Control> {
           padding: const EdgeInsets.all(10.0),
           color: Colors.white,
           height: double.infinity,
+          width: MediaQuery.of(context).size.width,
           child: ListView(
             children: <Widget>[
               Card(
@@ -35,7 +36,7 @@ class _ControlState extends State<Control> {
                           child: Image.asset(
                             'images/balance.jpg',
                             fit: BoxFit.cover,
-                            width: double.infinity,
+                            width: MediaQuery.of(context).size.width,
                             height: 200,
                           ),
                         ),
@@ -48,7 +49,7 @@ class _ControlState extends State<Control> {
                         children: <Widget>[
                           ButtonTheme(
                             height: 40,
-                            minWidth: 300,
+                            minWidth: 280,
                             child: RaisedButton(
                                child: Text('Check Balance', style: TextStyle(fontSize: 20.0),),
                               onPressed: () async {
